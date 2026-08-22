@@ -100,3 +100,56 @@ console.log(typeof null);        // object
         8. Object
 */
 
+
+// JavaScript Memory: Stack vs Heap
+
+
+/*
+    Primitive Data Types  → Stack Memory
+    Non-Primitive Types   → Heap Memory
+
+    Primitive values are copied by value.
+    Non-primitive values (objects, arrays, functions) are copied by reference.
+*/
+
+
+// Stack Memory (Primitive Types)
+let myName = "Prachi";
+
+// A copy of the value is assigned.
+let anotherName = myName;
+
+anotherName = "Muskan";
+
+console.log("Original Name :", myName);      // Prachi
+console.log("Copied Name   :", anotherName); // Muskan
+
+/*
+    myName remains unchanged because primitives are copied by value.
+*/
+
+
+// Heap Memory (Non-Primitive Types)
+let userOne = {
+    email: "prachi@gmail.com",
+};
+
+// Both variables point to the same object in heap memory.
+let userTwo = userOne;
+
+// Updating userTwo also updates userOne.
+userTwo.email = "muskan@gmail.com";
+
+console.log("User One :", userOne);
+console.log("User Two :", userTwo);
+
+/*
+    Output:
+
+    User One : { email: 'muskan@gmail.com' }
+    User Two : { email: 'muskan@gmail.com' }
+
+    Objects are copied by reference, not by value.
+*/
+
+
